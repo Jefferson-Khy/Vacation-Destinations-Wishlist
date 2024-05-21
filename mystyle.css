@@ -1,0 +1,84 @@
+.banner {
+  background-color: #e2e2e2;
+  padding: 70px;
+  margin-bottom: 3%;
+}
+
+.banner header {
+  font-size: 55px;
+  text-align: center;
+}
+
+.banner p {
+  text-align: center;
+}
+
+.btn-warning {
+  width: 25%;
+}
+
+.btn-danger {
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border: 2px solid orange;
+}
+
+button {
+  width: 100%;
+}
+
+.card {
+  width: 18rem;
+  height: 21rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid blue;
+}
+
+.card-img-top {
+  width: 286px;
+  height: 160px;
+}
+
+.cards-container {
+  border: 2px solid green;
+  width: 70%;
+}
+
+.input-field {
+  margin-bottom: 5%;
+}
+
+form {
+  margin-left: 5%;
+  border: 2px solid purple;
+}
+
+.form-container {
+  width: 30%;
+}
+
+h4 {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+#show-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
