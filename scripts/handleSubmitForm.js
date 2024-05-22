@@ -2,12 +2,14 @@ import { addToListButton } from "./addToListButton.js";
 
 const form = document.querySelector("form");
 const displayCards = document.getElementById("show-cards");
-let cardId = 1;
+var cardId = localStorage.getItem("cardId")
+  ? localStorage.getItem("cardId")
+  : 1;
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem(cardId)) {
+  if (Object.keys(localStorage).length != 0) {
     Object.keys(localStorage).forEach((e) => {
-      if (e == "loglevel") {
+      if (e == "loglevel" || e == "cardId") {
       } else {
         addToListButton(displayCards, e);
       }
@@ -28,7 +30,5 @@ form.addEventListener("submit", function (event) {
         photo: cardDetails.photo,
       })
     );
-
-    cardId++;
   });
 });

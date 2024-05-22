@@ -1,4 +1,5 @@
 import { createCard } from "./createCard.js";
+import { getPhoto } from "./getPhotoAPI.js";
 
 export function addToListButton(displayCards, cardId) {
   var destination = "";
@@ -29,8 +30,6 @@ export function addToListButton(displayCards, cardId) {
       // Reset form input fields
       document.querySelector("form").reset();
 
-      // Increment cardId for new card
-      cardId++;
       resolve(cardDetails);
     } else {
       // Grab values from form
@@ -60,7 +59,10 @@ export function addToListButton(displayCards, cardId) {
           document.querySelector("form").reset();
 
           // Increment cardId for new card
-          cardId++;
+          let updateCardId = parseInt(cardId);
+          updateCardId += 1;
+          updateCardId.toString();
+          localStorage.setItem("cardId", updateCardId);
           resolve(cardDetails);
         })
         .catch((error) => {
@@ -85,29 +87,12 @@ export function addToListButton(displayCards, cardId) {
           document.querySelector("form").reset();
 
           // Increment cardId for new card
-          cardId++;
+          let updateCardId = parseInt(cardId);
+          updateCardId += 1;
+          updateCardId.toString();
+          localStorage.setItem("cardId", updateCardId);
           resolve(cardDetails);
         });
     }
   });
-}
-
-function getPhoto(destination) {
-  return fetch(`https://api.unsplash.com/search/photos?query=${destination}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Client-ID UcL_oDqsa7rrfCC7Yy2Nl0_2gv4wBCr8N7ceCRczS1Y`,
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const firstPic = data.results[0]?.urls?.regular || null;
-      return firstPic;
-    });
 }
