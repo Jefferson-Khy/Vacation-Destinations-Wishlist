@@ -18,16 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const cardDetails = addToListButton(displayCards, cardId);
-  localStorage.setItem(
-    cardDetails.cardId,
-    JSON.stringify({
-      desc: cardDetails.description,
-      loc: cardDetails.location,
-      dest: cardDetails.destination,
-      photo: cardDetails.photo,
-    })
-  );
+  addToListButton(displayCards, cardId).then((cardDetails) => {
+    localStorage.setItem(
+      cardDetails.cardId,
+      JSON.stringify({
+        desc: cardDetails.description,
+        loc: cardDetails.location,
+        dest: cardDetails.destination,
+        photo: cardDetails.photo,
+      })
+    );
 
-  cardId++;
+    cardId++;
+  });
 });
