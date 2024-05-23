@@ -37,7 +37,7 @@ button {
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .card-buttons {
@@ -49,12 +49,14 @@ button {
 .card-img-top {
   width: 286px;
   height: 160px;
+  object-fit:cover;
 }
 
 .cards-container {
   border: 2px solid green;
   width: 70%;
 }
+
 
 .input-field {
   margin-bottom: 5%;

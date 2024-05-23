@@ -5,13 +5,16 @@ export function createCard(destination, location, photo, description, cardId) {
   card.innerHTML = `<div class="card" id="${cardId}">
       <img src="${photo}" class="card-img-top" alt="default picture">
       <div class="card-body">
-        <h5 class="card-title">${destination}</h5>
-        <h6 class="card-subTitle">${location}</h6>
-        <p class="card-text">${description}</p>
-        <div class="card-buttons">
-          <button class="btn btn-warning edit-btn">Edit</button>
-          <button class="btn btn-danger remove-btn">Remove</button>
+        <div class="text-container">
+          <h5 class="card-title">${destination}</h5>
+          <h6 class="card-subTitle">${location}</h6>
+          <p class="card-text">${description}</p>
         </div>
+          <div class="card-buttons">
+            <button class="btn btn-warning edit-btn">Edit</button>
+            <button class="btn btn-danger remove-btn">Remove</button>
+          </div>
+
       </div>
     </div>`;
 
