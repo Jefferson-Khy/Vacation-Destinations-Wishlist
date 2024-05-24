@@ -1,8 +1,10 @@
+require("detenv").config();
+
 export function getPhoto(destination) {
   return fetch(`https://api.unsplash.com/search/photos?query=${destination}`, {
     method: "GET",
     headers: {
-      Authorization: `Client-ID UcL_oDqsa7rrfCC7Yy2Nl0_2gv4wBCr8N7ceCRczS1Y`,
+      Authorization: `Client-ID ${process.env.UNSPLASH_API_KEY}`,
       "Content-Type": "application/json",
     },
   })
